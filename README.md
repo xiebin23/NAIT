@@ -35,9 +35,30 @@ After setting up the environment, you can run the experiments and analysis scrip
 
 1. **Training:**
 
-   ```sh
-   python partial_data_construct/hh_data_process_partial.py
-   ```
+   - for generating soft label
+     ```sh
+     bash train/generate_soft_label.sh
+     ```
+   - for training process reward model
+     ```sh
+     bash train/train_prm_qwen.sh
+     ```
 
 2. **Evaluate:**
+
+   - for Best-of-N Evaluation
+     ```sh
+     bash evaluate/generate_llm_responses_bon.sh
+     bash evaluate/formatted_prm@n.sh
+     bash evaluate/cal_prm@n_scores.sh
+     bash evaluate/cal_prm@n_scores_stats.sh
+     bash evaluate/run_check_prm@n.sh
+     bash evaluate/run_eval_prm@n.sh
+     ```
+   - for Step-Level PRM Evaluation
+     ```sh
+     bash evaluate/run_eval_prm_rlhflow.sh
+     ```
+     
+     
 
